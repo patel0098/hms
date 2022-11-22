@@ -10,7 +10,7 @@ RUN mkdir /var/run/sshd
 
 RUN useradd --user-group --create-home --system mogenius
 
-RUN echo 'root:root' |chpasswd
+RUN echo 'root:Ger@90' |chpasswd
 
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
@@ -23,6 +23,6 @@ RUN apt-get clean && \
 EXPOSE 22
 
 # PLEASE CHANGE THAT AFTER FIRST LOGIN
-RUN echo 'mogenius:mogenius' | chpasswd
+RUN echo 'mogenius:sagar@1998' | chpasswd
 
 CMD ["/usr/sbin/sshd", "-D", "-e"]
